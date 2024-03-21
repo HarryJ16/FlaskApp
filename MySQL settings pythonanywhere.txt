@@ -1,5 +1,18 @@
+git clone https://github.com/HarryJ16/FlaskApp.git
+
+mkvirtualenv --python=/usr/bin/python3.10 <name_of_virtualenv>
+
+pip install -r requirements.txt
+
+mysql
 Connecting:
 Use these settings in your web applications.
 
 Database host address:hrodriguez.mysql.pythonanywhere-services.com
 Username:hrodriguez
+pass: ianjulieta
+
+id_guitarra llave Primaria 	int(100)	AUTO_INCREMENT 
+marca 	varchar(200) 	
+modelo 	varchar(200) 
+precio 	float 	
