@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-2">
+     <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card custom-form">
+                <div class="card-header">
+                    <h1 class="text-center">{% block title %} Registrate {% endblock %}</h1>
+                </div>
+                <div class="card-body">
+                    <h5>Ingresa los siguientes datos: </h5>
+                    <br>
+                    <form action="" method="POST" >
+                        <div class="form-group">
+                            <label for="username">Tu Nombre</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Pepito Perez" required minlength="4" maxlength="20">
+                        </div>
+                        <form action="" method="POST" >
+                            <div class="form-group">
+                             <label for="email">Email</label>
+                             <input type="email" class="form-control" id="email" name="email" placeholder="pepito.perez@dominio.co">
+                         </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Que sea muy segura.." required minlength="6" maxlength="40">
+                        </div>
+                        <br>
+                        <div class="text-center d-grid gap-2 col-6 mx-auto">
+                            <input type="submit" class="btn btn-outline-primary" value="Crear mi cuenta" >
+                        </div>
+                        <div class="text-center">
+                            <p class="bottom-tex ">
+                                Al dar click en el boton de registrar, aceptas nuestras politicas.
+                            </p> 
+                            <p>
+                                <a href="#">Terminos y Condiciones</a> y
+                                <a href="#">Politica de Privacidad</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <footer class="text-center">
+                <p>Ya tienes una cuenta <a href="{{url_for('auth.login')}}" id="boton">Ingresa Aqui</a></p>
+            </footer>
+        </div>
+     </div>
+</div>
+{% endblock %}

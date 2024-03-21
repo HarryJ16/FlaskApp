@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block title %} Cuenta {% endblock %}
+
+{% block content %}
+
+    <div class="container mt-2">
+        <h1 class="">Cuenta de Usuario</h1>
+        <div class="container mt-4">
+            <br>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <a class="navbar-brand" href="{{url_for('todo.cuenta_user')}}">
+                        <img src="{{ url_for('static', filename='imagen/default.jpg') }}" alt="" style="width:300px;" class="rounded-pill text-center" >
+                    </a>
+                    <div class="text-center">
+                        <br>
+                        <p class="custom-link-profile">{{ user.1 }}</p>
+                        <p>Usuario de StoreGuitar Corp.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+                    {% if user %}
+                        <div class="card text-bg-dark border-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-header">Informacion de usuario</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Full Name</h5>
+                                <p class="card-text">{{ user.1 }}</p>
+                                <hr class="my-4">
+                                <h5 class="card-title">Email</h5>
+                                <p class="card-text">{{ user.2 }}</p>
+                                <hr class="my-4">
+                                <h5 class="card-title">ID</h5>
+                                <p class="card-text">{{ user.0 }}</p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p>No se encontró información del usuario.</p>
+                        <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-header">Sin Informacion</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Sin Informacion</h5>
+                                <p class="card-text">Sin Informacion</p>
+                                <p class="card-text">Sin Informacion</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

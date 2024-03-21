@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+           <div class="col-md-8">
+               <div class="card custom-form">
+                   <div class="card-header">
+                       <h2 class="text-center">{% block title %} Ingresa el nuevo producto {% endblock %}</h2>
+                   </div>
+                   <div class="card-body">
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <label for="marca" class="mr-sm-2">Marca: </label>
+                                <input type="text" class="form-control mb-2 mr-sm-2" name="marca" placeholder="Gibson, Fender...">
+                            </div>
+                            <div class="form-group">
+                                <label for="modelo" class="mr-sm-2">Modelo: </label>
+                                <input type="text" class="form-control mb-2 mr-sm-2" name="modelo" placeholder="LesPaul, StratoCaster..." >
+                            </div>
+                            <div class="form-group">
+                                <label for="marca" class="mr-sm-2">Precio: </label>
+                                <input type="text" class="form-control mb-2 mr-sm-2" name="precio" placeholder="COP $">
+                            </div>
+                            <div>
+                                <input class="btn btn-primary" type="submit" value="Guardar"/>
+                                <a href="{{url_for('todo.listar_guitarra')}}" class="btn btn-secondary">Cancelar</a>
+                            </div>
+                        </form>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+{% endblock %}

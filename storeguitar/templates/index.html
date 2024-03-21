@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %} Store Guitar {% endblock %}
+
+{% block content %}
+    <div class="conatiner-sm text-center">
+        <h1 class="display-3">Bienvenido a GuitarStore</h1>
+
+        <p class="lead">Aqui encontraras inventario de las guitarras bla bla bla bla bla blabla bla blabla bla blabla bla bla... </p>
+
+        <hr class="my-4">
+
+        <h6>¿Tienes una cuenta?</h6>
+        <br>
+        <div class="d-flex justify-content-center">
+            <a href="{{url_for('auth.login')}}" class="btn btn-outline-primary mx-2">Iniciar sesión</a>
+            <a href="{{url_for('auth.register')}}" class="btn btn-primary mx-2">Registrate</a>
+            
+        </div>       
+    </div>
+{% endblock %}

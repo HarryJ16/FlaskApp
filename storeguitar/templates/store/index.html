@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="container mt-4">
+    <h1>{% block title %} Lista de Guitarras {% endblock %}</h1>
+    <nav class="navbar">
+        <h6>Aqui encontraras el listado de los productos registrados:</h6> 
+        <a href="{{url_for('todo.crear_guitarra')}}" class="btn btn-outline-primary">Nuevo producto</a>
+    </nav>
+    
+    <hr class="my-4">
+
+    <table class="table table-dark table-striped table-hover" >
+        <thead>
+            <tr>
+                <th class="text-center">ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guitarra in guitarras %}
+            <tr>
+                <td class="text-center">{{ guitarra.0 }}</td>
+                <td>{{ guitarra.1 }}</td>
+                <td>{{ guitarra.2 }}</td>
+                <td>${{ "{:,.2f}".format(guitarra.3) }}</td>
+                <td>
+                    <a href="{{url_for('todo.editar_guitarra', id_guitarra=guitarra.0)}}" class="btn btn-outline-info" >Editar</a>
+                    <a href="{{url_for('todo.borrar_guitarra', id_guitarra=guitarra.0)}}" class="btn btn-outline-danger" >Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}
