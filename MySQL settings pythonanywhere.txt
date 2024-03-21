@@ -1,0 +1,5 @@
+Connecting:
+Use these settings in your web applications.
+
+Database host address:hrodriguez.mysql.pythonanywhere-services.com
+Username:hrodriguez

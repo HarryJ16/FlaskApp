@@ -3,6 +3,10 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 # Configuracion del Proyecto
 app.config.from_mapping(
     DEBUG = True,
@@ -25,9 +29,5 @@ app.register_blueprint(todo.bp)
 from . import auth
 app.register_blueprint(auth.auth_bp)
 
-# crea una instancia o objeto que define una ruta y renderiza el index.html
-def create_app():
-    @app.route('/')
-    def index():
-        return render_template('index.html')
-    return app
+
+
